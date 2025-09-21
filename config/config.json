@@ -1,0 +1,59 @@
+{
+  "general": {
+    "scan_threads": 5,
+    "timeout": 30,
+    "retry_count": 3,
+    "user_agent": "WebsiteSecurityScanner/1.0"
+  },
+  "modules": {
+    "active_scan": {
+      "enabled": true,
+      "priority": "high"
+    },
+    "passive_scan": {
+      "enabled": true,
+      "priority": "medium"
+    },
+    "ai_enhanced": {
+      "enabled": true,
+      "model_path": "models/vulnerability_predictor.model",
+      "update_interval_days": 30
+    }
+  },
+  "reporting": {
+    "formats": ["html", "json", "text", "pdf"],
+    "default_format": "html",
+    "include_screenshots": true,
+    "generate_summary": true
+  },
+  "security": {
+    "rate_limit": 10,
+    "max_concurrent_requests": 20,
+    "respect_robots_txt": true
+  },
+  "advanced": {
+    "fingerprinting": {
+      "os_detection": true,
+      "tech_stack": true
+    },
+    "fuzzing": {
+      "enabled": true,
+      "iterations": 1000,
+      "mutation_rate": 0.1
+    },
+    "vulnerability_intelligence": {
+      "enabled": true,
+      "sources": ["cve", "exploitdb", "owasp"]
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file_path": "logs/scanner.log",
+    "rotate_days": 7
+  },
+  "proxy": {
+    "enabled": false,
+    "http_proxy": "",
+    "https_proxy": ""
+  }
+}
